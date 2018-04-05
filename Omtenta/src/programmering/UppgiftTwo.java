@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class UppgiftTwo {
 
-		
+	
 	private static int numberOne = 10;
 	private static int numberTwo = 5;
 	private static char tecken;
