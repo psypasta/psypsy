@@ -13,32 +13,32 @@ public class UppgiftThree {
 		
 		Person[] person = new Person[4];
 		String[] fName = { "Sattar", "bertil", "Rebecca", "Aram"};
-		int[] ålder = {35, 54, 24, 19};
+		int[] older = {35, 54, 24, 19};
 		int temp = 0;
 		String tempName;
 		int tempAge;
 		
 		
-		//Fråga E
+		//Frï¿½ga E
 		for(int i = 0; i < 4; i++) {
 			
-			temp += ålder[i];
+			temp += older[i];
 	
 		}
 		
-		//Fråga E
-		System.out.println("Medelvärdet: " + temp / 4);
+		//Frï¿½ga E
+		System.out.println("Medelvï¿½rdet: " + temp / 4);
 		
 //////////////////////////
 		
-		//Fråga D
+		//Frï¿½ga D
 		for(int i = 0; i < 4; i++) {
 
-			person[i] = new Person(fName[i], ålder[i]);
+			person[i] = new Person(fName[i], older[i]);
 	
 		}
 		
-		//Fråga F
+		//Frï¿½ga F
 				tempAge = person[1].age;
 				person[1].age = person[3].age;
 				
@@ -53,35 +53,35 @@ public class UppgiftThree {
 				}
 		
 	
-			SortInt.bubbleSort(ålder, true);
+			SortInt.bubbleSort(older, true);
 
-			//Fråga D
+			//Frï¿½ga D
 		for(int i = 0; i < 4; i++) {
 			
-			if(ålder[0] >= person[i].age) {
+			if(older[0] >= person[i].age) {
 				
-				System.out.println(person[i].age + " | " +  person[i].fName + " är yngst");
+				System.out.println(person[i].age + " | " +  person[i].fName + " ï¿½r yngst");
 			}
-			else if(ålder[3] <= person[i].age) {
+			else if(older[3] <= person[i].age) {
 				
-				System.out.println(person[i].age + " | " + person[i].fName + "är äldst");
+				System.out.println(person[i].age + " | " + person[i].fName + "ï¿½r ï¿½ldst");
 			}
 
 		}
 //////////////////////////
 
-		//Beräkna och skriv ut namnen på dem som är yngst och äldst (Fråga A,B,C)
+		//Berï¿½kna och skriv ut namnen pï¿½ dem som ï¿½r yngst och ï¿½ldst (Frï¿½ga A,B,C)
 
 
 //		for(int i = 0; i < 2; i++ ) {
-//				SortInt.bubbleSort(ålder, true);
+//				SortInt.bubbleSort(ï¿½lder, true);
 //				
-//				if(ålder[0] < ålder[i]) {
-//					System.out.println("Äldsta personen: " + namn[ålder[0]] + ålder[0]);
+//				if(ï¿½lder[0] < ï¿½lder[i]) {
+//					System.out.println("ï¿½ldsta personen: " + namn[ï¿½lder[0]] + ï¿½lder[0]);
 //					
 //					
-//				}else if(ålder[3] > ålder[i]) {
-//					System.out.println(ålder[3]);
+//				}else if(ï¿½lder[3] > ï¿½lder[i]) {
+//					System.out.println(ï¿½lder[3]);
 //					
 //				}
 //				
@@ -91,7 +91,7 @@ public class UppgiftThree {
 //
 //		for(int i = 0; i < namn.length; i++) {
 //			
-//			System.out.println("Namn: " + namn[i] + "\n" + "Ålder: " + ålder[i]+ "\n" );
+//			System.out.println("Namn: " + namn[i] + "\n" + "ï¿½lder: " + ï¿½lder[i]+ "\n" );
 //
 //
 //		}
