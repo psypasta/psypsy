@@ -6,6 +6,7 @@ public class Product {
     private double sellValue;
     private long barNumber;
 
+    private ProductType b;
 
     public Product(){
 
