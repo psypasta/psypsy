@@ -1,7 +1,11 @@
 public class ProductType {
 
-    private String type;
 
 
+    static private String type;
+
+    public void setType(String type) {
+        this.type = type;
+    }
 
 }
