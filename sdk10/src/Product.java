@@ -5,28 +5,27 @@ public class Product {
     private double buyValue;
     private double sellValue;
     private long barNumber;
+    private ProductType type;
+    private ProductGroup productGroup;
+
 
 
     public Product(){
 
     }
+    public Product(ProductGroup group) {
+        this.productGroup = group;
+    }
 
-    public Product(int quantity, String productName, double buyValue, double sellValue, long barNumber){
+    public Product(int quantity, String productName, double buyValue, double sellValue, long barNumber, ProductGroup productGroup){
         this.quantity = quantity;
         this.productName = productName;
         this.buyValue = buyValue;
         this.sellValue = sellValue;
         this.barNumber = barNumber;
+        this.productGroup = productGroup;
     }
 
-
-    public void createProduct(int quantity, String productName, double buyValue, double sellValue, long barNumber){
-        this.quantity = quantity;
-        this.productName = productName;
-        this.buyValue = buyValue;
-        this.sellValue = sellValue;
-        this.barNumber = barNumber;
-    }
 
     public int getQuantity() {
         return quantity;
@@ -42,6 +41,10 @@ public class Product {
 
     public double getSellValue() {
         return sellValue;
+    }
+
+    public ProductGroup getProductGroup() {
+        return productGroup;
     }
 
     public long getBarNumber() {
