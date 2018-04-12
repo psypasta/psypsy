@@ -1,6 +1,6 @@
+package Lager;
+
 public class ProductType {
-
-
 
     static private String type;
 

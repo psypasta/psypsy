@@ -1,11 +1,13 @@
+package Lager;
+
 public class Product {
 
     private int quantity;
     private String productName;
     private double buyValue;
     private double sellValue;
-    private long barNumber;
-    private ProductType type;
+    private String articleNumber;
+
     private ProductGroup productGroup;
 
 
@@ -14,16 +16,17 @@ public class Product {
     public Product(){
 
     }
+
     public Product(ProductGroup group) {
         this.productGroup = group;
     }
 
-    public Product(int quantity, String productName, double buyValue, double sellValue, long barNumber, ProductGroup productGroup){
+    public Product(int quantity, String productName, double buyValue, double sellValue, String articleNumber, ProductGroup productGroup){
         this.quantity = quantity;
         this.productName = productName;
         this.buyValue = buyValue;
         this.sellValue = sellValue;
-        this.barNumber = barNumber;
+        this.articleNumber = articleNumber;
         this.productGroup = productGroup;
     }
 
@@ -48,7 +51,7 @@ public class Product {
         return productGroup;
     }
 
-    public long getBarNumber() {
-        return barNumber;
+    public String getArticleNumber() {
+        return articleNumber;
     }
 }

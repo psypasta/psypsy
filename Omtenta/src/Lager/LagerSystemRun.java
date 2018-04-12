@@ -1,3 +1,5 @@
+package Lager;
+
 import java.util.Scanner;
 
 public class LagerSystemRun {
@@ -6,7 +8,7 @@ public class LagerSystemRun {
     private String productName;
     private double buyValue;
     private double sellValue;
-    private long barNumber;
+    private String barNumber;
     private String productGroupTemp;
     private ProductGroup productGroup;
 
@@ -42,14 +44,14 @@ public class LagerSystemRun {
         System.out.println("Create you product page " +  "\n");
         System.out.println("Enter quantity: ");
         this.quantity = Integer.parseInt(sc.nextLine());
-        System.out.println("Enter Product name: ");
+        System.out.println("Enter Lager.Product name: ");
         this.productName = sc.nextLine();
         System.out.println("Enter product buy Value: ");
         this.buyValue = Double.parseDouble(sc.nextLine());
         System.out.println("Enter sell value: ");
         this.sellValue = Double.parseDouble(sc.nextLine());
         System.out.println("Enter bar Number: ");
-        this.barNumber = Long.parseLong(sc.nextLine());
+        this.barNumber = sc.nextLine();
         System.out.println("Enter productGroup");
         this.productGroupTemp = sc.nextLine();
 
@@ -69,7 +71,7 @@ public class LagerSystemRun {
         Product product = new Product(quantity, productName, buyValue, sellValue, barNumber, productGroup);
 
 
-        //ProductGroup productGroup;
+        //Lager.ProductGroup productGroup;
 
 
 
@@ -79,6 +81,7 @@ public class LagerSystemRun {
 
 
         System.out.println(product.getQuantity() + " " + product.getProductName() + " " + product.getBuyValue()
-                + " " + product.getSellValue() + " " + product.getBarNumber() + " " + product.getProductGroup());
+                + " " + product.getSellValue() + " " + product.getArticleNumber() + " " + product.getProductGroup());
     }
+
 }
