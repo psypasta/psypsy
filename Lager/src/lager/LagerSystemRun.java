@@ -1,4 +1,4 @@
-package Lager;
+package lager;
 
 import java.util.Scanner;
 
@@ -44,7 +44,7 @@ public class LagerSystemRun {
         System.out.println("Create you product page " +  "\n");
         System.out.println("Enter quantity: ");
         this.quantity = Integer.parseInt(sc.nextLine());
-        System.out.println("Enter Lager.Product name: ");
+        System.out.println("Enter lager.Product name: ");
         this.productName = sc.nextLine();
         System.out.println("Enter product buy Value: ");
         this.buyValue = Double.parseDouble(sc.nextLine());
@@ -71,7 +71,7 @@ public class LagerSystemRun {
         Product product = new Product(quantity, productName, buyValue, sellValue, barNumber, productGroup);
 
 
-        //Lager.ProductGroup productGroup;
+        //lager.ProductGroup productGroup;
 
 
 

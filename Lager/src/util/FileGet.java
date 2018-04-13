@@ -6,8 +6,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
-import bank.accounts.Account;
-import bank.accounts.Customer;
+
 
 public class FileGet {
 
@@ -76,7 +75,7 @@ public class FileGet {
 		return bookingsList;
 	}
 	//plsfix this class
-	private List<Customer> customerGet(List<Account> accountList) {
+/*	private List<Customer> customerGet(List<Account> accountList) {
 		List<Customer> customerList = new ArrayList<Customer>();
 		String[] lines = getLines("Bankdata/customers").split("\n");
 		for(int i = 0; i < lines.length; i++) {
@@ -88,9 +87,9 @@ public class FileGet {
 		}
 		return customerList;
 	}
-	
+
 	public List<Account> accountGet() {
-		
+
 		List<Account> accountList = new ArrayList<Account>();
 		String[] accountLines = getLines("Bankdata/accounts").split("\n");
 		String[] safeLines = getLines("Bankdata/safe").split("\n");
@@ -104,8 +103,8 @@ public class FileGet {
 			holdAccount.deposit(Double.parseDouble(safeS[1]));
 			accountList.add(holdAccount);
 		}
-		
+
 		customerGet(accountList);
 		return accountList;
-	}
+	}*/
 }

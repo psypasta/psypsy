@@ -1,4 +1,4 @@
-package Lager;
+package lager;
 
 public class ProductType {
 

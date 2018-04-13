@@ -7,7 +7,6 @@ import java.util.GregorianCalendar;
 import java.util.List;
 import java.util.Scanner;
 
-import bank.transfer.Transfer;
 
 public class DateBook {
 

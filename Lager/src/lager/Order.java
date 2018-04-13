@@ -1,4 +1,4 @@
-package Lager;
+package lager;
 
 import java.util.ArrayList;
 import java.util.List;

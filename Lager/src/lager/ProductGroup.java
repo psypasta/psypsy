@@ -1,4 +1,4 @@
-package Lager;
+package lager;
 
 public enum ProductGroup {
     OTHER,
