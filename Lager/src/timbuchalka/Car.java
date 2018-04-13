@@ -10,8 +10,20 @@ public class Car {
     private String engine;
     private String colour;
 
-    static private boolean test = true;
 
+    public void setModel(String model){
+        String validateModel = model.toLowerCase();
+        if(validateModel.equals("carrera") || validateModel.equals("commadore")){
+            this.model = model;
+        }else{
+            System.out.println("Not a carrera");
+            this.model = "Unknown";
+        }
+
+    }
+    public String getModel(){
+        return this.model;
+    }
 
 // ...
 
