@@ -7,11 +7,7 @@ public class Product {
     private double buyValue;
     private double sellValue;
     private String articleNumber;
-
     private ProductGroup productGroup;
-
-
-    private ProductType b;
 
     public Product(){
 

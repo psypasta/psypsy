@@ -7,5 +7,17 @@
     </content>
     <orderEntry type="jdk" jdkName="10" jdkType="JavaSDK" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="file://C:/Program Files/Java/mysql-connector-java-5.1.46" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="file://C:/Program Files/Java/mysql-connector-java-5.1.46/src" />
+        </SOURCES>
+        <jarDirectory url="file://C:/Program Files/Java/mysql-connector-java-5.1.46" recursive="false" />
+      </library>
+    </orderEntry>
   </component>
 </module>
