@@ -9,6 +9,7 @@ public class Product {
     private String articleNumber;
     private ProductGroup productGroup;
 
+
     public Product(){
 
     }

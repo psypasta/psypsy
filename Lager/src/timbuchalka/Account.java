@@ -5,7 +5,19 @@ public class Account {
     private double balance;
     private String customerName;
     private String email;
+    private String phoneNumber;
 
+    public Account(){
+
+    }
+    public Account(int accountNumber, double balance, String customerName, String email, String phoneNumber){
+        this.accountNumber = accountNumber;
+        this.balance = balance;
+        this.customerName = customerName;
+        this.email = email;
+        this.phoneNumber = phoneNumber;
+
+    }
 
     public int getAccountNumber() {
         return accountNumber;
@@ -47,5 +59,5 @@ public class Account {
         this.phoneNumber = phoneNumber;
     }
 
-    private String phoneNumber;
+
 }

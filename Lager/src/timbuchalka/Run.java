@@ -1,62 +1,88 @@
 package timbuchalka;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Run {
-    Account account = new Account();
-    Scanner sc = new Scanner(System.in);
+   //
+     Scanner sc = new Scanner(System.in);
+     List<Account> accountList = new ArrayList<>();
+    int id;
 
 
+    double balance;
+
+    public void createAccount(){
+
+
+        accountList.add();
+        id = accountList.get(0).getAccountNumber();
+
+
+
+    }
     public Run(){
-        selectionScreen();
-        select(Integer.parseInt(sc.nextLine()));
 
+        createAccount();
+
+        while(true) {
+            selectionScreen();
+            select(Integer.parseInt(sc.nextLine()));
+        }
     }
 
     public static void main(String[] args){
-        while(true){
-
             new Run();
-        }
+
 
     }
 
     public void selectionScreen(){
 
+
+
         System.out.println("1. Deposit");
         System.out.println("2. Withdrawal");
-        System.out.println("3. current balance: " + account.getBalance());
+        System.out.println("3. current balance: ");
 
 
     }
-    public void deposit(double deposit){
+    public int deposit(double deposit){
         if (deposit <= 0) {
             System.out.println("No amount or negative amount tried to be deposited");
 
-            selectionScreen();
 
+
+            return -1;
 
         } else if(deposit > 0) {
-            account.setBalance(deposit);
+            accountList.get(id).setBalance(deposit);
+
             System.out.println("This amount was deposited " + deposit);
-            System.out.println("Current blanace: " + account.getBalance());
-            selectionScreen();
+            System.out.println("Current blanace: " + accountList.get(id).getBalance());
+
+
         }
+
+        return 0;
 
     }
     public void withdrawal(double withdrawal){
-        if(withdrawal > account.getBalance() || withdrawal < 0){
+        if(withdrawal > accountList.get(id).getBalance() || withdrawal < 0){
             System.out.println("Insufficent amount tried to be withdrawl");
         }else{
-            double temp = account.getBalance();
+            double temp = accountList.get(id).getBalance();
             temp -= withdrawal;
-            account.setBalance(temp);
+            accountList.get(id).setBalance(temp);
             System.out.println("This amount was withdrawn " + withdrawal);
-            System.out.println("Current blanace: " + account.getBalance());
+            System.out.println("Current blanace: " + accountList.get(id).getBalance());
         }
 
     }
     public void select(int select){
+
+
         int selected = select;
         boolean isProcessOver = false;
         while(!isProcessOver) {
@@ -77,7 +103,10 @@ public class Run {
 
                 }
             }
+
         }
+
+
     }
 
 
