@@ -1,5 +1,7 @@
 package Lager;
 
+import util.FileGetSql;
+
 import java.util.Scanner;
 
 public class LagerSystemRun {
@@ -12,20 +14,26 @@ public class LagerSystemRun {
     private String productGroupTemp;
     private ProductGroup productGroup;
 
+    FileGetSql file = new FileGetSql();
+    private Product product = new Product();
 
 
     static Scanner sc = new Scanner(System.in);
 
-    public LagerSystemRun(){
+    public LagerSystemRun() throws Exception{
         MenuPrint();
         int choice = Integer.parseInt(sc.nextLine());
         if(choice == 1){
             CreateProduct();
+
+
         }
+
+        file.readDataBase();
 
     }
 
-    public static void main(String[] args){
+    public static void main(String[] args) throws Exception{
         new LagerSystemRun();
     }
 
@@ -45,7 +53,7 @@ public class LagerSystemRun {
         System.out.println("Enter quantity: ");
         this.quantity = Integer.parseInt(sc.nextLine());
         System.out.println("Enter Lager.Product name: ");
-        this.productName = sc.nextLine();
+        product.set() = sc.nextLine();
         System.out.println("Enter product buy Value: ");
         this.buyValue = Double.parseDouble(sc.nextLine());
         System.out.println("Enter sell value: ");
@@ -68,7 +76,7 @@ public class LagerSystemRun {
         }
 
 
-        Product product = new Product(quantity, productName, buyValue, sellValue, barNumber, productGroup);
+        product = new Product(quantity, productName, buyValue, sellValue, barNumber, productGroup);
 
 
         //Lager.ProductGroup productGroup;
