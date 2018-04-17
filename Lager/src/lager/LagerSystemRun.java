@@ -1,4 +1,4 @@
-package Lager;
+package lager;
 
 import util.FileGetSql;
 
@@ -52,8 +52,13 @@ public class LagerSystemRun {
         System.out.println("Create you product page " +  "\n");
         System.out.println("Enter quantity: ");
         this.quantity = Integer.parseInt(sc.nextLine());
+<<<<<<< HEAD:Lager/src/Lager/LagerSystemRun.java
         System.out.println("Enter Lager.Product name: ");
         product.set() = sc.nextLine();
+=======
+        System.out.println("Enter lager.Product name: ");
+        this.productName = sc.nextLine();
+>>>>>>> 31bdaadffe91c3f3cdae112ba3ef818c45127a8f:Lager/src/lager/LagerSystemRun.java
         System.out.println("Enter product buy Value: ");
         this.buyValue = Double.parseDouble(sc.nextLine());
         System.out.println("Enter sell value: ");
@@ -79,7 +84,7 @@ public class LagerSystemRun {
         product = new Product(quantity, productName, buyValue, sellValue, barNumber, productGroup);
 
 
-        //Lager.ProductGroup productGroup;
+        //lager.ProductGroup productGroup;
 
 
 
