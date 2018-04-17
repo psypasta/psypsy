@@ -17,7 +17,7 @@ public class Product {
         this.productGroup = group;
     }
 
-    public Product(int quantity, String productName, double buyValue, double sellValue, String articleNumber, ProductGroup productGroup){
+    public Product(int quantity, String productName, double buyValue, double sellValue, String articleNumber){
         this.quantity = quantity;
         this.productName = productName;
         this.buyValue = buyValue;

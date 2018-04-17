@@ -2,6 +2,8 @@ package lager;
 
 import util.FileGetSql;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class LagerSystemRun {
@@ -14,6 +16,7 @@ public class LagerSystemRun {
     private String productGroupTemp;
     private ProductGroup productGroup;
 
+    private List<Product> productList = new ArrayList<>();
     FileGetSql file = new FileGetSql();
     private Product product = new Product();
 
@@ -28,8 +31,11 @@ public class LagerSystemRun {
 
 
         }
+        else if(choice == 4){
+            listProduct();
+        }
 
-        file.readDataBase();
+
 
     }
 
@@ -42,6 +48,31 @@ public class LagerSystemRun {
         System.out.println("1. Create product");
         System.out.println("2. Remove product");
         System.out.println("3. Change productGroup");
+        System.out.println("4. List Product");
+
+    }
+    public void listProduct() throws Exception {
+
+        /*
+        private int quantity;
+        private String productName;
+        private double buyValue;
+        private double sellValue;
+        private String barNumber;
+        private String productGroupTemp;
+        private ProductGroup productGroup;
+        */
+
+        FileGetSql file = new FileGetSql();
+        productList = file.readSelectedSqlColumn();
+
+        System.out.println("Products:" + "\n");
+        for(int i = 0; i < productList.size(); i++){
+            System.out.println(productList.get(i).getArticleNumber() + " " + productList.get(i).getProductName() + " " +
+            productList.get(i).getBuyValue() + " " + productList.get(i).getSellValue() + " " +  productList.get(i).getQuantity());
+
+        }
+
 
     }
     public void CreateProduct(){
@@ -52,13 +83,9 @@ public class LagerSystemRun {
         System.out.println("Create you product page " +  "\n");
         System.out.println("Enter quantity: ");
         this.quantity = Integer.parseInt(sc.nextLine());
-<<<<<<< HEAD:Lager/src/Lager/LagerSystemRun.java
-        System.out.println("Enter Lager.Product name: ");
-        product.set() = sc.nextLine();
-=======
+
         System.out.println("Enter lager.Product name: ");
         this.productName = sc.nextLine();
->>>>>>> 31bdaadffe91c3f3cdae112ba3ef818c45127a8f:Lager/src/lager/LagerSystemRun.java
         System.out.println("Enter product buy Value: ");
         this.buyValue = Double.parseDouble(sc.nextLine());
         System.out.println("Enter sell value: ");
@@ -81,7 +108,7 @@ public class LagerSystemRun {
         }
 
 
-        product = new Product(quantity, productName, buyValue, sellValue, barNumber, productGroup);
+
 
 
         //lager.ProductGroup productGroup;

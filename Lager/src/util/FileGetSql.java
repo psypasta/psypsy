@@ -9,6 +9,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class FileGetSql {
@@ -30,7 +32,7 @@ public class FileGetSql {
     private ResultSet resultSet = null;
 
 
-    public String readSelectedSqlColumn()throws Exception{
+    public List<Product> readSelectedSqlColumn()throws Exception{
 
         Class.forName("com.mysql.jdbc.Driver");
         connect = DriverManager
@@ -42,19 +44,19 @@ public class FileGetSql {
         resultSet = statement
                 .executeQuery("SELECT * FROM product;");
         //resultSet.next();
-        System.out.println("PRODUCTNAME" + " " + "QUANTITY" + " " + "INVALUE" + " " + "OUTVALUE" +  " " + "ArticleNumber");
+
+        List<Product> productList = new ArrayList<>();
         while(resultSet.next()){
 
-
-
-            System.out.println(resultSet.getString("ProductName") + " " +  resultSet.getString("Quantity") + " " + resultSet.getString("ProductValueIN") + " " +
-            resultSet.getString("ProductValueOUT") + " " + resultSet.getString("ArticleNumber"));
-
+            productList.add(new Product(resultSet.getInt("Quantity"),
+                        resultSet.getString("ProductName"),
+                        resultSet.getDouble("ProductValueIN"),
+                        resultSet.getDouble("ProductValueOUT"),
+                        resultSet.getString("ArticleNumber")));
           //  System.out.println("Table: " + resultSet.getString(i));
         }
 
-
-        return temp;
+        return productList;
 
     }
 
