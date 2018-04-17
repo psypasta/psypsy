@@ -6,19 +6,26 @@ public class Run {
     Account account = new Account();
     Scanner sc = new Scanner(System.in);
 
+
     public Run(){
         selectionScreen();
         select(Integer.parseInt(sc.nextLine()));
+
     }
 
     public static void main(String[] args){
-        new Run();
+        while(true){
+
+            new Run();
+        }
+
     }
 
     public void selectionScreen(){
 
         System.out.println("1. Deposit");
         System.out.println("2. Withdrawal");
+        System.out.println("3. current balance: " + account.getBalance());
 
 
     }
