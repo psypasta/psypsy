@@ -24,7 +24,7 @@ public class FileGetSql {
     private ProductGroup productGroup;
 
     String temp;
-    private String login = "jdbc:mysql://192.168.1.108/bank?";
+    private String login = "jdbc:mysql://192.168.0.188/bank?";
     private String pass = "user=max&password=max";
     private Connection connect = null;
     private Statement statement = null;
@@ -77,7 +77,7 @@ public class FileGetSql {
 
             // PreparedStatements can use variables and are more efficient
             preparedStatement = connect
-                    .prepareStatement("insert into bank.product values (?, ?, ?, ?, ?)");
+                    .prepareStatement("insert into bank.product values (default,  ?, ?, ?, ?, ?)");
             // "myuser, webpage, datum, summary, COMMENTS from feedback.comments");
             // Parameters start with 1
             preparedStatement.setString(1, product.getProductName());
