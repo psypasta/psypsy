@@ -2,53 +2,70 @@ package lager;
 
 public class Product {
 
-    private int quantity;
-    private String productName;
-    private double buyValue;
-    private double sellValue;
-    private String articleNumber;
-    private ProductGroup productGroup;
+    //ny sql
+    private int artikelnummer;
+    private String benamning;
+    private String enhet;
+    private String materialgrupp;
+    private String gnpris;
+    private int prisdatum;
+    private String alekod;
+    private String lagerford;
+    private String status;
+
+    public Product(int artikel, String benamning, String enhet, String materialgrupp, String gnpris){
+        this.benamning = benamning;
+        this.enhet = enhet;
+        this.materialgrupp = materialgrupp;
+        this.gnpris = gnpris;
+        this.artikelnummer = artikel;
+
+    }
 
 
     public Product(){
 
     }
 
-    public Product(ProductGroup group) {
-        this.productGroup = group;
-    }
+    public void updateProduct(){
 
-    public Product(int quantity, String productName, double buyValue, double sellValue, String articleNumber){
-        this.quantity = quantity;
-        this.productName = productName;
-        this.buyValue = buyValue;
-        this.sellValue = sellValue;
-        this.articleNumber = articleNumber;
-        this.productGroup = productGroup;
     }
 
 
-    public int getQuantity() {
-        return quantity;
+    public String getEnhet() {
+        return enhet;
     }
 
+    public String getMaterialGrupp() {
+        return materialgrupp;
+    }
+
+    public String getGnpris() {
+        return gnpris;
+    }
+
+    public int getPrisdatum() {
+        return prisdatum;
+    }
+
+    public String getAlekod() {
+        return alekod;
+    }
+
+    public String getLagerford() {
+        return lagerford;
+    }
+
+    public String getStatus() {
+        return status;
+    }
     public String getProductName() {
-        return productName;
+        return this.benamning;
     }
 
-    public double getBuyValue() {
-        return buyValue;
-    }
 
-    public double getSellValue() {
-        return sellValue;
-    }
 
-    public ProductGroup getProductGroup() {
-        return productGroup;
-    }
-
-    public String getArticleNumber() {
-        return articleNumber;
+    public int getArtikelNummer(){
+        return this.artikelnummer;
     }
 }

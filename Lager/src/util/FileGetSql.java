@@ -15,17 +15,8 @@ import java.util.List;
 
 public class FileGetSql {
 
-
-    private int quantity = 3;
-    private String productName = "Lampa 230W";
-    private double buyValue = 59.99;
-    private double sellValue = 159.00;
-    private String articleNumber = "61666116";
-    private ProductGroup productGroup;
-
-    String temp;
-    private String login = "jdbc:mysql://192.168.0.188/bank?";
-    private String pass = "user=max&password=max";
+    private String login = "jdbc:sqlite:/home/robinvanmanen/test";
+   // private String pass = "user=root&password=";
     private Connection connect = null;
     private Statement statement = null;
     private PreparedStatement preparedStatement = null;
@@ -34,25 +25,24 @@ public class FileGetSql {
 
     public List<Product> readSelectedSqlColumn()throws Exception{
 
-        Class.forName("com.mysql.jdbc.Driver");
+        //Class.forName("com.mysql.jdbc.Driver");
         connect = DriverManager
-                .getConnection( login
-                        + pass);
+                .getConnection( login);
 
         statement = connect.createStatement();
 
         resultSet = statement
-                .executeQuery("SELECT * FROM product;");
+                .executeQuery("SELECT * FROM selga;");
         //resultSet.next();
 
         List<Product> productList = new ArrayList<>();
         while(resultSet.next()){
 
-            productList.add(new Product(resultSet.getInt("Quantity"),
-                        resultSet.getString("ProductName"),
-                        resultSet.getDouble("ProductValueIN"),
-                        resultSet.getDouble("ProductValueOUT"),
-                        resultSet.getString("ArticleNumber")));
+            productList.add(new Product(resultSet.getInt("Artikelnummer"),
+                        resultSet.getString("Benämning"),
+                        resultSet.getString("Enhet"),
+                        resultSet.getString("Materialgrupp"),
+                        resultSet.getString("GN-pris")));
           //  System.out.println("Table: " + resultSet.getString(i));
         }
 
@@ -66,8 +56,7 @@ public class FileGetSql {
             Class.forName("com.mysql.jdbc.Driver");
             // Setup the connection with the DB
             connect = DriverManager
-                    .getConnection( login
-                            + pass);
+                    .getConnection( login);
 
             // Statements allow to issue SQL queries to the database
             statement = connect.createStatement();
@@ -81,13 +70,11 @@ public class FileGetSql {
             // "myuser, webpage, datum, summary, COMMENTS from feedback.comments");
             // Parameters start with 1
             preparedStatement.setString(1, product.getProductName());
-            preparedStatement.setInt(2, quantity);
-            preparedStatement.setDouble(3, buyValue);
-            preparedStatement.setDouble(4, sellValue);
-            preparedStatement.setString(5, articleNumber);
-            preparedStatement.executeUpdate();
-//aasd
-
+            //preparedStatement.setInt(2, å);
+            //preparedStatement.setDouble(3, buyValue);
+            //preparedStatement.setDouble(4, sellValue);
+            //preparedStatement.setString(5, articleNumber);
+            //preparedStatement.executeUpdate();
             resultSet = statement
                     .executeQuery("SELECT * FROM product");
 

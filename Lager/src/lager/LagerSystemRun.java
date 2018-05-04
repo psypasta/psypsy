@@ -66,15 +66,11 @@ public class LagerSystemRun {
         FileGetSql file = new FileGetSql();
         productList = file.readSelectedSqlColumn();
 
-        System.out.println("Products:" + "\n");
-        for(int i = 0; i < productList.size(); i++){
-            System.out.println(productList.get(i).getArticleNumber() + " " + productList.get(i).getProductName() + " " +
-            productList.get(i).getBuyValue() + " " + productList.get(i).getSellValue() + " " +  productList.get(i).getQuantity());
 
         }
 
 
-    }
+
     public void CreateProduct(){
 
 
@@ -110,18 +106,6 @@ public class LagerSystemRun {
 
 
 
-
-        //lager.ProductGroup productGroup;
-
-
-
-
-
-
-
-
-        System.out.println(product.getQuantity() + " " + product.getProductName() + " " + product.getBuyValue()
-                + " " + product.getSellValue() + " " + product.getArticleNumber() + " " + product.getProductGroup());
     }
 
 }
